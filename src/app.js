@@ -30,13 +30,18 @@ app.get('/resize', (req, res) => {
         title: 'Free Image Processing'
     })
 })
+app.get('/rotate', (req, res) => {
+    res.render('rotate', {
+        title: 'Free Image Processing'
+    })
+})
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Free Image Processing'
     })
 })
 const jsonParser = bodyParser.json()
-app.post('/uploadImage', jsonParser, (req, res) => {
+app.post('/resizeImg', jsonParser, (req, res) => {
     const fileName = req.body.fileName;
     const path = __dirname + '/download/' + fileName;
     let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
@@ -56,8 +61,28 @@ app.post('/uploadImage', jsonParser, (req, res) => {
         fs.unlinkSync(path);
         
    });
-  })
-
+})
+app.post('/rotateImg', jsonParser, (req, res) => {
+    const fileName = req.body.fileName;
+    const path = __dirname + '/download/' + fileName;
+    let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
+    fs.writeFileSync(path, imgBuffer);
+    sharp(imgBuffer)
+    .rotate(req.body.rotate || 180, {background: req.body.background ? req.body.background : 'transparent'})
+    .toFile(path, (err, info) => { 
+            fs.readFile(path,  (err, content) => {
+               
+                if (err) {
+                   
+                } else {
+                    res.writeHead(200,{'Content-type':'application/json'});
+                    res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + content.toString('base64')}));
+                }
+            })
+        fs.unlinkSync(path);
+        
+   });
+})
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
 })

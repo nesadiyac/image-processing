@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.17/dist/browser-image-compression.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <div class="main-content">
         {{>header}}
         <form>
-            <div style="width: 60vw;">
-                <input type="file" id="upload" style="margin-left: 125px;width: 30vw;">
-                <button style="float: right;">Preview</button>
+            <div class="control">
+                <input type="file" id="upload">
             </div>
             <div class="control">
                 <span style="margin-right: 85px;">MaxSizeMB:</span><input id="fileSize" type="number" value="1">
@@ -23,16 +23,20 @@
             <div class="control">
                 <span style="margin-right: 35px;">MaxWidthOrHeight:</span> <input id="maxWidthOrHeight" value="1024">
             </div>
+            <div class="control" id="controlBtns">
+                <button>Preview</button>
+            </div>
+
         </form>
     </div>
     <div class="image-container">
         <div class="input-output-container input-preview">
+             <span class="size" id="input-size"></span>
             <img id="input-image" />
-            <span class="size" id="input-size"></span>
         </div>
         <div class="input-output-container output-preview">
-            <img id="output-image" />
             <span class="size" id="output-size"></span>
+            <img id="output-image" />
         </div>
     </div>
     <div class="image-compression-details">
@@ -43,11 +47,13 @@
         <p>At its core, image compression is when you remove or group together certain parts of an image file in order
             to reduce its size. Why do that? Here are a few reasons.</p>
         <ul style="width: 50vw;">
-            <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take longer to load, and can cause your
+            <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take longer to
+                load, and can cause your
                 visitors to bounce because of this.</li>
             <li style="margin-bottom: 10px;">For reducing the storage impact on your hard drive.
             </li>
-            <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can take a while, and some email
+            <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can take
+                a while, and some email
                 servers have a file size limit.</li>
         </ul>
 

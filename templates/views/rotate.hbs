@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Free Image Processing</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <form>
+            <div class="control">
+                <input type="file" id="upload">
+            </div>
+            <div class="control">
+                <span style ="margin-right: 85px">Degree:</span><input id="rotate" value="10">
+            </div>
+            <div class="control">
+                <span style="margin-right: 10px">Background Color:</span><input id="backgroundColor" value="black">
+            </div>
+            <div class="control" id="controlBtns">
+                <button>Rotate</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="image-container">
+        <div class="input-output-container output-preview">
+            <img id="output-image" class="output-image"/>
+        </div>
+    </div>
+    <div class="image-compression-details">
+        <h3 class="detail-title">What is image rotation?</h3>
+        <aside>
+           When referring to an image or image editor, rotate is a feature that allows you to turn an image in a clockwise or counterclockwise direction. For example, many editors allow you to rotate images 90, 180, or 270.        </aside>
+    </div>
+    {{>footer}}
+
+    <script src="/js/rotate.js"></script>
+</body>
+
+</html>

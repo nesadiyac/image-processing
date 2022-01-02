@@ -1,4 +1,5 @@
 const form = document.querySelector('form');
+const controlBtns = document.querySelector('#controlBtns');
 const search = document.querySelector('#upload');
 const fileSize = document.querySelector('#fileSize');
 const maxHeightWidth = document.querySelector('#maxWidthOrHeight');
@@ -11,7 +12,7 @@ form.addEventListener('submit', (e) => {
     if (file) {
         const downloadLink = document.getElementById("download-link");
         if (downloadLink) {
-            form.removeChild(downloadLink);
+          controlBtns.removeChild(downloadLink);
         }
         handleImageUpload(file);
     } else {
@@ -47,7 +48,7 @@ function handleImageUpload(file) {
         downloadLink.download = fileName;
         downloadLink.innerHTML = 'Download';
         downloadLink.id = 'download-link';
-        form.appendChild(downloadLink);
+        controlBtns.appendChild(downloadLink);
       })
       .catch(function (error) {
         console.log(error.message);

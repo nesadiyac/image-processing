@@ -3,10 +3,8 @@ console.log('Client side javascript file is loaded!');
 const form = document.querySelector('form');
 const controlBtns = document.querySelector('#controlBtns');
 const search = document.querySelector('#upload');
-const messageOne = document.querySelector('#message-1');
-const messageTwo = document.querySelector('#message-2');
-const width = document.querySelector('#width');
-const height = document.querySelector('#height');
+const rotate = document.querySelector('#rotate');
+const backgroundColor = document.querySelector('#backgroundColor');
 let formData;
 let file;
 const reader = new FileReader();
@@ -23,14 +21,12 @@ document.querySelector('input').addEventListener('change', event => {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    fetch('/resizeImg', {
+    fetch('/rotateImg', {
         method: 'POST',
         body: JSON.stringify({data: reader.result, 
             fileName: file.name, 
-            dimension: {
-                width: Number(width.value),
-                height: Number(height.value)
-            }
+            rotate: Number(rotate.value),
+            background: backgroundColor.value
         }),
         headers: {
             'Accept': 'application/json',
@@ -52,8 +48,6 @@ form.addEventListener('submit', (e) => {
         downloadLink.id = 'download-link';
         controlBtns.appendChild(downloadLink);
         document.getElementById("output-image").src = data.imgSrc;
-        document.getElementById("output-image").style.height = height.value + 'px';
-        document.getElementById("output-image").style.width = width.value + 'px';
         console.log(data);
     })
     .catch(err =>{

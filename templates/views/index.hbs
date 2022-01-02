@@ -5,6 +5,7 @@
 <head>
     <title>Free Image Processing</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -12,14 +13,16 @@
         {{>header}}
         <form>
             <div class="control">
-                <input type="file"  id="upload" style="margin-left: 125px;width: 30vw;">
-                <button style="float: right;">Resize</button>
+                <input type="file" id="upload">
             </div>
             <div class="control">
-                <span>Width:</span><input id="width">
+                <span style="margin-right: 50px">Width:</span><input id="width" value="100">
             </div>
             <div class="control">
-                <span>Height:</span> <input id="height">
+                <span style="margin-right: 50px">Height:</span> <input id="height" value="100">
+            </div>
+            <div class="control" id="controlBtns">
+                <button>Resize</button>
             </div>
         </form>
 
@@ -28,6 +31,15 @@
         <div class="input-output-container output-preview">
             <img id="output-image" />
         </div>
+    </div>
+    <div class="image-compression-details">
+        <h3 class="detail-title">What is image resizing?</h3>
+        <aside>
+            Resizing is altering the size of your image without cutting anything out. To resize an image is to essentially change the file size. Because sometimes, size does matter.
+        </aside>
+        <aside>
+            Resizing can help your photo fit into a certain space on a screen, such as in a blog post or social media post. Smaller images weigh less than larger ones, which can be important for making an uploading process faster or taking up less storage room on your devices.
+        </aside>
     </div>
     {{>footer}}
 
