@@ -13,18 +13,15 @@
     <div class="main-content">
         {{>header}}
         <form>
-            <div class="control">
+            <div style="width: 60vw;">
                 <input type="file" id="upload" style="margin-left: 125px;width: 30vw;">
-               
-            </div>
-            <div class="control">
-                <span>MaxSizeMB:</span><input id="fileSize" type="number" value="1">
-            </div>
-            <div class="control">
-                <span>MaxWidthOrHeight:</span> <input id="maxWidthOrHeight" value="1024">
-            </div>
-            <div class="control">
                 <button style="float: right;">Preview</button>
+            </div>
+            <div class="control">
+                <span style="margin-right: 85px;">MaxSizeMB:</span><input id="fileSize" type="number" value="1">
+            </div>
+            <div class="control">
+                <span style="margin-right: 35px;">MaxWidthOrHeight:</span> <input id="maxWidthOrHeight" value="1024">
             </div>
         </form>
     </div>
@@ -46,13 +43,11 @@
         <p>At its core, image compression is when you remove or group together certain parts of an image file in order
             to reduce its size. Why do that? Here are a few reasons.</p>
         <ul style="width: 50vw;">
-            <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take longer to
-                load, and can cause your
+            <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take longer to load, and can cause your
                 visitors to bounce because of this.</li>
             <li style="margin-bottom: 10px;">For reducing the storage impact on your hard drive.
             </li>
-            <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can take
-                a while, and some email
+            <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can take a while, and some email
                 servers have a file size limit.</li>
         </ul>
 

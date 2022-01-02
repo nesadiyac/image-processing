@@ -10,7 +10,18 @@
 <body>
     <div class="main-content">
         {{>header}}
-
+        <form>
+            <div class="control">
+                <input type="file"  id="upload" style="margin-left: 125px;width: 30vw;">
+                <button style="float: right;">Resize</button>
+            </div>
+            <div class="control">
+                <span>Width:</span><input id="width">
+            </div>
+            <div class="control">
+                <span>Height:</span> <input id="height">
+            </div>
+        </form>
 
     </div>
     <div class="image-container">
