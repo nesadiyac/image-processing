@@ -32,8 +32,6 @@ function handleImageUpload(file) {
     }
     imageCompression(imageFile, options)
       .then(function (compressedFile) {
-        console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-        console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
         const urlCreator = window.URL || window.webkitURL;
         document.getElementById("output-image").src = urlCreator.createObjectURL(compressedFile);
         document.getElementById("output-image").style.height = '50vh';

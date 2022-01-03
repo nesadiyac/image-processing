@@ -35,8 +35,8 @@ app.get('/rotate', (req, res) => {
         title: 'Free Image Processing'
     })
 })
-app.get('/help', (req, res) => {
-    res.render('help', {
+app.get('/free-editor', (req, res) => {
+    res.render('freeEditor', {
         title: 'Free Image Processing'
     })
 })
@@ -63,6 +63,27 @@ app.post('/resizeImg', jsonParser, (req, res) => {
    });
 })
 app.post('/rotateImg', jsonParser, (req, res) => {
+    const fileName = req.body.fileName;
+    const path = __dirname + '/download/' + fileName;
+    let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
+    fs.writeFileSync(path, imgBuffer);
+    sharp(imgBuffer)
+    .rotate(req.body.rotate || 180, {background: req.body.background ? req.body.background : 'transparent'})
+    .toFile(path, (err, info) => { 
+            fs.readFile(path,  (err, content) => {
+               
+                if (err) {
+                   
+                } else {
+                    res.writeHead(200,{'Content-type':'application/json'});
+                    res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + content.toString('base64')}));
+                }
+            })
+        fs.unlinkSync(path);
+        
+   });
+})
+app.post('/editImg', jsonParser, (req, res) => {
     const fileName = req.body.fileName;
     const path = __dirname + '/download/' + fileName;
     let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
