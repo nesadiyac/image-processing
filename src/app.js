@@ -17,7 +17,7 @@ app.use(express.urlencoded({limit: '50mb'}));
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
-
+const port = process.env.PORT || 4200;
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
@@ -142,7 +142,6 @@ setInterval(() => {
     })
     fs.writeFileSync('visitor.txt', '1');
 }, 1000 * 60 * 60 * 24);
-
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.`)
 })
