@@ -17,7 +17,7 @@ app.use(express.urlencoded({limit: '50mb'}));
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
-const port = process.env.PORT || 4200;
+const port = process.env.PORT || 3000;
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
