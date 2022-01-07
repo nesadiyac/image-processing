@@ -30,7 +30,8 @@ app.get('', (req, res) => {
         if (err) {
             fs.writeFileSync('visitor.txt', '1');
         }
-    })
+    });
+    console.log('initial req');
     res.render('compressor', {
         title: 'Free Image Processing'
     })
