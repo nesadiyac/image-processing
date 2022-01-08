@@ -23,14 +23,14 @@ app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
 app.get('/', (req, res) => {
     //fs.writeFileSync('visitor.txt', '1');
-    fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
-        if (count) {
-            fs.writeFileSync('visitor.txt', (++count).toString());
-        }
-        if (err) {
-            fs.writeFileSync('visitor.txt', '1');
-        }
-    });
+    // fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
+    //     if (count) {
+    //         fs.writeFileSync('visitor.txt', (++count).toString());
+    //     }
+    //     if (err) {
+    //         fs.writeFileSync('visitor.txt', '1');
+    //     }
+    // });
     console.log('initial req');
     res.render('compressor', {
         title: 'Free Image Processing'
