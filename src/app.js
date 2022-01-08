@@ -115,34 +115,34 @@ app.post('/editImg', jsonParser, (req, res) => {
         
    });
 });
-setInterval(() => {
-    fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
-        if (count) {
-            var transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                  user: 'chirag.uiengineer@gmail.com',
-                  pass: 'hmseskjklcwhlvjo'
-                }
-              });
+// setInterval(() => {
+//     fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
+//         if (count) {
+//             var transporter = nodemailer.createTransport({
+//                 service: 'gmail',
+//                 auth: {
+//                   user: 'chirag.uiengineer@gmail.com',
+//                   pass: 'hmseskjklcwhlvjo'
+//                 }
+//               });
               
-              var mailOptions = {
-                from: 'chirag.uiengineer@gmail.com',
-                to: 'nesadiyac@gmail.com',
-                subject: 'Sending Email using Node.js',
-                text: `Total visitors on ${new Date().toDateString()} are ${count}`
-              };
-          transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-              console.log(error);
-            } else {
-              console.log('Email sent: ' + info.response);
-            }
-          });
-        }
-    })
-    fs.writeFileSync('visitor.txt', '1');
-}, 1000 * 60 * 60 * 24);
+//               var mailOptions = {
+//                 from: 'chirag.uiengineer@gmail.com',
+//                 to: 'nesadiyac@gmail.com',
+//                 subject: 'Sending Email using Node.js',
+//                 text: `Total visitors on ${new Date().toDateString()} are ${count}`
+//               };
+//           transporter.sendMail(mailOptions, function(error, info){
+//             if (error) {
+//               console.log(error);
+//             } else {
+//               console.log('Email sent: ' + info.response);
+//             }
+//           });
+//         }
+//     })
+//     fs.writeFileSync('visitor.txt', '1');
+// }, 1000 * 60 * 60 * 24);
 app.listen(port, () => {
     console.log(`Server is up on port ${port}.`)
 })
