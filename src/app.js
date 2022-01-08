@@ -21,7 +21,7 @@ const port = process.env.PORT || 3000;
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
-app.get('', (req, res) => {
+app.get('/', (req, res) => {
     //fs.writeFileSync('visitor.txt', '1');
     fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
         if (count) {
