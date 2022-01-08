@@ -16,6 +16,11 @@ const handleImageUpload = event => {
     })
     reader.readAsDataURL(event.target.files[0]);
     file = event.target.files[0];
+    const { name: fileName, size } = file;
+    const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector('.file-name').textContent = fileNameAndSize;
 }
 document.querySelector('input').addEventListener('change', event => {
     handleImageUpload(event)

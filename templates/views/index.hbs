@@ -6,40 +6,55 @@
     <title>Free Image Processing</title>
     <link rel="stylesheet" href="/css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <form>
-            <div class="control">
-                <input type="file" id="upload">
-            </div>
-            <div class="control">
-                <span style="margin-right: 50px">Width:</span><input id="width" value="100">
-            </div>
-            <div class="control">
-                <span style="margin-right: 50px">Height:</span> <input id="height" value="100">
-            </div>
-            <div class="control" id="controlBtns">
-                <button>Resize</button>
-            </div>
-        </form>
+    {{>header}}
+    <div class="container">
+        <div class="main-content">
+            <form>
+                 <div class="control">
+                    {{!-- <input type="file" id="upload"> --}}
+                    <div class="file-input">
+                        <input type="file" id="upload" class="file">
+                        <label for="upload">
+                            Select file
+                        </label>
+                    </div>
+                </div>
+                <div class="control" style="padding: 0 0 0 10px;">
+                    <p class="file-name"></p>
+                </div>
+                <div class="control">
+                    <span style="margin-right: 50px">Width:</span><input id="width" type="number" value="100">
+                </div>
+                <div class="control">
+                    <span style="margin-right: 45px">Height:</span> <input id="height" type="number" value="100">
+                </div>
+                <div class="control" id="controlBtns">
+                    <button>Resize</button>
+                </div>
+            </form>
 
-    </div>
-    <div class="image-container">
-        <div class="input-output-container output-preview">
-            <img id="output-image" />
         </div>
-    </div>
-    <div class="image-compression-details">
-        <h3 class="detail-title">What is image resizing?</h3>
-        <aside>
-            Resizing is altering the size of your image without cutting anything out. To resize an image is to essentially change the file size. Because sometimes, size does matter.
-        </aside>
-        <aside>
-            Resizing can help your photo fit into a certain space on a screen, such as in a blog post or social media post. Smaller images weigh less than larger ones, which can be important for making an uploading process faster or taking up less storage room on your devices.
-        </aside>
+        <div class="image-container">
+            <div class="input-output-container output-preview">
+                <img id="output-image" />
+            </div>
+        </div>
+        <div class="image-compression-details">
+            <h3 class="detail-title">What is image resizing?</h3>
+            <aside>
+                Resizing is altering the size of your image without cutting anything out. To resize an image is to
+                essentially change the file size. Because sometimes, size does matter.
+            </aside>
+            <aside>
+                Resizing can help your photo fit into a certain space on a screen, such as in a blog post or social
+                media post. Smaller images weigh less than larger ones, which can be important for making an uploading
+                process faster or taking up less storage room on your devices.
+            </aside>
+        </div>
     </div>
     {{>footer}}
 

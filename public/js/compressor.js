@@ -6,6 +6,11 @@ const maxHeightWidth = document.querySelector('#maxWidthOrHeight');
 let file;
 document.querySelector('input').addEventListener('change', event => {
     file = event.target.files[0];
+    const { name: fileName, size } = file;
+    const fileSize = (size / 1000).toFixed(2);
+  // Set the text content
+  const fileNameAndSize = `${fileName} - ${fileSize}KB`;
+  document.querySelector('.file-name').textContent = fileNameAndSize;
 })
 form.addEventListener('submit', (e) => {
     e.preventDefault();

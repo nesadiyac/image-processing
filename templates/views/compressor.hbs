@@ -4,6 +4,7 @@
 
 <head>
     <title>Image Compressor</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/styles.css">
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.17/dist/browser-image-compression.js"></script>
@@ -11,52 +12,69 @@
 </head>
 
 <body>
-    <div class="main-content">
-        {{>header}}
-        <form>
-            <div class="control">
-                <input type="file" id="upload">
-            </div>
-            <div class="control">
-                <span style="margin-right: 85px;">MaxSizeMB:</span><input id="fileSize" type="number" value="1">
-            </div>
-            <div class="control">
-                <span style="margin-right: 35px;">MaxWidthOrHeight:</span> <input id="maxWidthOrHeight" value="1024">
-            </div>
-            <div class="control" id="controlBtns">
-                <button>Preview</button>
-            </div>
+    {{>header}}
+    <div class="container">
+        <div class="main-content">
+            <form>
+                <div class="control">
+                    {{!-- <input type="file" id="upload"> --}}
+                    <div class="file-input">
+                        <input type="file" id="upload" class="file">
+                        <label for="upload">
+                            Select file
+                        </label>
+                    </div>
+                </div>
+                <div class="control" style="padding: 0 0 0 10px;">
+                    <p class="file-name"></p>
+                </div>
+                <div class="control">
+                    <span style="margin-right: 65px;">MaxSizeMB:</span><input id="fileSize" type="number" value="1">
+                </div>
+                <div class="control">
+                    <span style="margin-right: 15px;">MaxWidthOrHeight:</span> <input type="number" id="maxWidthOrHeight"
+                        value="1024">
+                </div>
+                <div class="control" id="controlBtns">
+                    <button>Preview</button>
+                </div>
 
-        </form>
-    </div>
-    <div class="image-container">
-        <div class="input-output-container input-preview">
-             <span class="size" id="input-size"></span>
-            <img id="input-image" />
+            </form>
         </div>
-        <div class="input-output-container output-preview">
-            <span class="size" id="output-size"></span>
-            <img id="output-image" />
+        <div class="image-container">
+            <div class="input-output-container input-preview">
+                <span class="size" id="input-size"></span>
+                <img id="input-image" />
+            </div>
+            <div class="input-output-container output-preview">
+                <span class="size" id="output-size"></span>
+                <img id="output-image" />
+            </div>
         </div>
-    </div>
-    <div class="image-compression-details">
-        <h3 class="detail-title">What is image compression?</h3>
-        <aside>Image compression is an application of data compression that encodes the original image with few bits.
-            The objective of image compression is to reduce the redundancy of the image and to store or transmit data in
-            an efficient form.</aside>
-        <p>At its core, image compression is when you remove or group together certain parts of an image file in order
-            to reduce its size. Why do that? Here are a few reasons.</p>
-        <ul>
-            <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take longer to
-                load, and can cause your
-                visitors to bounce because of this.</li>
-            <li style="margin-bottom: 10px;">For reducing the storage impact on your hard drive.
-            </li>
-            <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can take
-                a while, and some email
-                servers have a file size limit.</li>
-        </ul>
+        <div class="image-compression-details">
+            <h3 class="detail-title">What is image compression?</h3>
+            <aside>Image compression is an application of data compression that encodes the original image with few
+                bits.
+                The objective of image compression is to reduce the redundancy of the image and to store or transmit
+                data in
+                an efficient form.</aside>
+            <p>At its core, image compression is when you remove or group together certain parts of an image file in
+                order
+                to reduce its size. Why do that? Here are a few reasons.</p>
+            <ul>
+                <li style="margin-bottom: 10px;">For website optimization. Sites with uncompressed images can take
+                    longer to
+                    load, and can cause your
+                    visitors to bounce because of this.</li>
+                <li style="margin-bottom: 10px;">For reducing the storage impact on your hard drive.
+                </li>
+                <li style="margin-bottom: 10px;">For sending and uploading images. Uploading an uncompressed image can
+                    take
+                    a while, and some email
+                    servers have a file size limit.</li>
+            </ul>
 
+        </div>
     </div>
     {{>footer}}
     <script src="/js/compressor.js"></script>
