@@ -112,6 +112,21 @@ form {
 ul {
   padding-left: 20px;
 }
+.footer {
+  background-color: white;
+  overflow: hidden;
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 2px 2px 10px #6a6765;
+  min-height: 10vh;
+  align-items: center;
+}
+.footer a {
+  margin-right: 20px;
+}
 .header {
   background-color: white;
   overflow: hidden;
@@ -151,7 +166,10 @@ ul {
   .header-right {
     padding-top: 25px;
   }
-  
+  .active {
+    color: white !important;
+    background-color: teal;
+  }
   @media screen and (max-width: 500px) {
     .header {
       flex-direction: column;

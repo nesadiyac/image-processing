@@ -22,32 +22,32 @@ const port = process.env.PORT || 3000;
 app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
 app.get('/', (req, res) => {
-    //fs.writeFileSync('visitor.txt', '1');
-    // fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
-    //     if (count) {
-    //         fs.writeFileSync('visitor.txt', (++count).toString());
-    //     }
-    //     if (err) {
-    //         fs.writeFileSync('visitor.txt', '1');
-    //     }
-    // });
-    console.log('initial req');
     res.render('compressor', {
-        title: 'Free Image Processing'
+        title: 'compressor'
     })
 })
 app.get('/resize', (req, res) => {
     res.render('index', {
-        title: 'Free Image Processing'
+        title: 'resize'
     })
 })
 app.get('/rotate', (req, res) => {
     res.render('rotate', {
-        title: 'Free Image Processing'
+        title: 'rotate'
     })
 })
 app.get('/free-editor', (req, res) => {
     res.render('freeEditor', {
+        title: 'editor'
+    })
+})
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'about'
+    })
+})
+app.get('/privacy-policy', (req, res) => {
+    res.render('privacy-policy', {
         title: 'Free Image Processing'
     })
 })
@@ -115,34 +115,7 @@ app.post('/editImg', jsonParser, (req, res) => {
         
    });
 });
-// setInterval(() => {
-//     fs.readFile('visitor.txt', {encoding:'utf8', flag:'r'}, (err, count) => {
-//         if (count) {
-//             var transporter = nodemailer.createTransport({
-//                 service: 'gmail',
-//                 auth: {
-//                   user: 'chirag.uiengineer@gmail.com',
-//                   pass: 'hmseskjklcwhlvjo'
-//                 }
-//               });
-              
-//               var mailOptions = {
-//                 from: 'chirag.uiengineer@gmail.com',
-//                 to: 'nesadiyac@gmail.com',
-//                 subject: 'Sending Email using Node.js',
-//                 text: `Total visitors on ${new Date().toDateString()} are ${count}`
-//               };
-//           transporter.sendMail(mailOptions, function(error, info){
-//             if (error) {
-//               console.log(error);
-//             } else {
-//               console.log('Email sent: ' + info.response);
-//             }
-//           });
-//         }
-//     })
-//     fs.writeFileSync('visitor.txt', '1');
-// }, 1000 * 60 * 60 * 24);
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}.`)
 })
