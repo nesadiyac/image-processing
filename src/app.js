@@ -51,6 +51,9 @@ app.get('/privacy-policy', (req, res) => {
         title: 'Free Image Processing'
     })
 })
+app.get('/sitemap', (req, res) => {
+    res.sendFile(__dirname + '/download/sitemap.xml');
+})
 const jsonParser = bodyParser.json()
 app.post('/resizeImg', jsonParser, (req, res) => {
     const fileName = req.body.fileName;
