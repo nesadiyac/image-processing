@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #d1e8d9;
+    background-color: #f1f7f7;
 }
 .app-logo {
   background: url('../img/logo.png');
@@ -19,9 +19,9 @@ body {
   background-repeat: no-repeat;
 }
 .container {
-  background: url('../img/background.jpeg');
+  /* background: url('../img/background.jpeg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   margin: 10px 0 10px 0;
   padding-bottom: 30px;
   min-height: 80vh;
@@ -50,15 +50,24 @@ input {
   padding: 0 15px 0 15px;
 }
 button {
-    cursor: pointer;
-    border: 1px solid #888888;
-    background: teal;
-    color: white;
-    padding: 8px;
-   
-    height: 38px;
-    font-size: 18px;
-    border-radius: 5px;
+  position: relative;
+  /* width: 200px; */
+  height: 25px;
+  padding: 15px;
+  border-radius: 5px;
+  background: linear-gradient( 
+40deg
+,teal,#4db9b9);
+  box-shadow: 0 4px 7px rgb(0 0 0 / 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+  border: none;
 }
 .image-container {
     /* display: flex;
@@ -95,16 +104,26 @@ form {
     margin-top: 10px;
 }
 #download-link {
-    cursor: pointer;
-    border: 1px solid #888888;
-    background: green;
-    color: white;
-    padding: 8px;
-    height: 38px;
-    font-size: 18px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-left: 1vw;
+  position: relative;
+  /* width: 200px; */
+  height: 25px;
+  padding: 15px;
+  border-radius: 5px;
+  background: linear-gradient( 
+40deg
+,teal,#4db9b9);
+  box-shadow: 0 4px 7px rgb(0 0 0 / 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+  border: none;
+  margin-left: 10px;
+  text-decoration: none;
 }
 .image-compression-details{
   padding: 0 15px 0 15px;
@@ -137,7 +156,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-shadow: 2px 2px 10px #6a6765;
+  box-shadow:1px 1px 20px -5px #6a6765;
   }
   
   .header a {
