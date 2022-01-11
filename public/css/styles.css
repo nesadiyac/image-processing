@@ -16,6 +16,7 @@ body {
   background-position: center;
   background-size: cover;
   background-position-x: -25px;
+  background-repeat: no-repeat;
 }
 .container {
   background: url('../img/background.jpeg');
@@ -46,7 +47,7 @@ input {
     /* box-shadow: 2px 3px 3px #aaaaaa; */
 }
 .how-to {
-  padding-left: 50px;
+  padding: 0 15px 0 15px;
 }
 button {
     cursor: pointer;
