@@ -56,46 +56,24 @@ app.get('/sitemap', (req, res) => {
 })
 const jsonParser = bodyParser.json()
 app.post('/resizeImg', jsonParser, (req, res) => {
-    const fileName = req.body.fileName;
-    const path = __dirname + '/download/' + fileName;
     let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
-    fs.writeFileSync(path, imgBuffer);
     sharp(imgBuffer)
     .resize(req.body.dimension.width || undefined, req.body.dimension.height || undefined)
-    .toFile(path, (err, info) => { 
-            fs.readFile(path,  (err, content) => {
-               
-                if (err) {
-                   
-                } else {
-                    res.writeHead(200,{'Content-type':'application/json'});
-                    res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + content.toString('base64')}));
-                }
-            })
-        fs.unlinkSync(path);
+    .toBuffer().then(data => {
+    
+        res.writeHead(200,{'Content-type':'application/json'});
+        res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + data.toString('base64')}));
         
-   });
+    })
 })
 app.post('/rotateImg', jsonParser, (req, res) => {
-    const fileName = req.body.fileName;
-    const path = __dirname + '/download/' + fileName;
     let imgBuffer =  Buffer.from(req.body.data.split(',')[1], 'base64');
-    fs.writeFileSync(path, imgBuffer);
     sharp(imgBuffer)
     .rotate(req.body.rotate || 180, {background: req.body.background ? req.body.background : 'transparent'})
-    .toFile(path, (err, info) => { 
-            fs.readFile(path,  (err, content) => {
-               
-                if (err) {
-                   
-                } else {
-                    res.writeHead(200,{'Content-type':'application/json'});
-                    res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + content.toString('base64')}));
-                }
-            })
-        fs.unlinkSync(path);
-        
-   });
+    .toBuffer().then(data => {
+        res.writeHead(200,{'Content-type':'application/json'});
+        res.end(JSON.stringify({imgSrc: req.body.data.split(',')[0]+ ',' + data.toString('base64')}));
+    })
 })
 app.post('/editImg', jsonParser, (req, res) => {
     const fileName = req.body.fileName;
