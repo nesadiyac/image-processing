@@ -28,12 +28,12 @@ app.get('/', (req, res) => {
 })
 app.get('/resize', (req, res) => {
     res.render('resize', {
-        title: 'resize'
+        title: 'image-resize'
     })
 })
 app.get('/rotate', (req, res) => {
     res.render('rotate', {
-        title: 'rotate'
+        title: 'image-rotate'
     })
 })
 app.get('/free-editor', (req, res) => {
