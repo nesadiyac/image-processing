@@ -45,14 +45,16 @@ input {
     padding: 8px;
     /* box-shadow: 2px 3px 3px #aaaaaa; */
 }
-
+.how-to {
+  padding-left: 50px;
+}
 button {
     cursor: pointer;
     border: 1px solid #888888;
-    background: green;
+    background: teal;
     color: white;
     padding: 8px;
-    width: 90px;
+   
     height: 38px;
     font-size: 18px;
     border-radius: 5px;

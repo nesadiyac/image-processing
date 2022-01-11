@@ -22,12 +22,12 @@ const port = process.env.PORT || 3000;
 app.use(express.static(publicDirectoryPath))
 app.use(fileupload());
 app.get('/', (req, res) => {
-    res.render('compressor', {
+    res.render('index', {
         title: 'compressor'
     })
 })
 app.get('/resize', (req, res) => {
-    res.render('index', {
+    res.render('resize', {
         title: 'resize'
     })
 })

@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Online Rotate Image</title>
+    <title>Online Image Resizer</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,16 +17,16 @@
         <div class="main-content">
             <header style="text-align: center;">
                 <h1>
-                    Online Rotate Image
+                    Online Image Resizer
                 </h1>
             </header>
             <div class="how-to">
-                <h2 class="">How to rotate images?</h2>
+                <h2 class="">How to resize images?</h2>
                 <ol class="">
                     <li> Click on the "Select Image" button to select JPG, JPEG, or PNG files.</li>
-                    <li> Then enter rotation degree ranging from 0 to 360 degree.</li>
-                    <li> Then click on the "Rotate Now" button to start rotating your images.</li>
-                    <li> Click the "Download" button to save your image.</li>
+                    <li> Then enter dimension in pixel.</li>
+                    <li> Then click on the "Resize Now" button to start resizing your images.</li>
+                    <li> Click the "Download" button to save your resized image.</li>
                 </ol>
             </div>
             <form>
@@ -43,13 +43,13 @@
                     <p class="file-name"></p>
                 </div>
                 <div class="control">
-                    <span style="margin-right: 85px">Degree:</span><input id="rotate" type="number" value="10">
+                    <span style="margin-right: 50px">Width:</span><input id="width" type="number" value="100">
                 </div>
                 <div class="control">
-                    <span style="margin-right: 10px">Background Color:</span><input id="backgroundColor" value="black">
+                    <span style="margin-right: 45px">Height:</span> <input id="height" type="number" value="100">
                 </div>
                 <div class="control" id="controlBtns">
-                    <button>Rotate</button>
+                    <button>Resize Now</button>
                 </div>
             </form>
 
@@ -57,15 +57,15 @@
         <script async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2078364019879861"
             crossorigin="anonymous"></script>
-        <!-- rotate_1 -->
+        <!-- resize_1 -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2078364019879861"
-            data-ad-slot="9260482195" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            data-ad-slot="6048845552" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         <div class="image-container">
             <div class="input-output-container output-preview">
-                <img id="output-image" class="output-image" />
+                <img id="output-image" />
             </div>
         </div>
         <div class="image-compression-details">
@@ -73,19 +73,24 @@
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2078364019879861"
                 crossorigin="anonymous"></script>
             <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-                data-ad-format="fluid" data-ad-client="ca-pub-2078364019879861" data-ad-slot="5840111938"></ins>
+                data-ad-format="fluid" data-ad-client="ca-pub-2078364019879861" data-ad-slot="4718601950"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <h3 class="detail-title">What is image rotation?</h3>
+            <h3 class="detail-title">What is image resizing?</h3>
             <aside>
-                When it comes to an image or image editor, rotate refers to a feature that allows you to rotate an image
-                clockwise or counterclockwise. Many editors, for example, allow you to rotate photos by 90, 180, or 270
-                degrees. </aside>
+                Resizing is the process of changing the size of an image without cutting anything out. When you resize
+                an image, you're just changing the file size. Because size does matter on occasion.
+            </aside>
+            <aside>
+                Resizing your photo might make it fit into a specific area on a screen, such as a blog or social network
+                post. Smaller photographs weigh less than larger ones, which might help speed up the uploading process
+                or free up storage space on your devices.
+            </aside>
         </div>
     </div>
     {{>footer}}
-    <script src="/js/rotate.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

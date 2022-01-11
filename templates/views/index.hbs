@@ -3,8 +3,12 @@
 <html>
 
 <head>
-    <title>Image Resizer Online</title>
+    <meta name="google-site-verification" content="Rpzvh9ThtuSmDC4_19u0rVFKnovkGxfSOykYeRULqHk" />
+    <title>Image Compressor Online / Optimizer</title>
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/styles.css">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@1.0.17/dist/browser-image-compression.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2078364019879861"
         crossorigin="anonymous"></script>
@@ -16,16 +20,25 @@
         <div class="main-content">
             <header style="text-align: center;">
                 <h1>
-                    Image Resizer Online
+                    Online Image Compressor / Optimizer
                 </h1>
             </header>
+            <div class="how-to">
+                <h2 class="">How to compress images?</h2>
+                <ol class="">
+                    <li> Click on the "Select Image" button to select JPG, JPEG, or PNG files.</li>
+                    <li> Then enter maximum image output size and dimension.</li>
+                    <li> Then click on the "Compress Now" button to start optimizing your images.</li>
+                    <li> Click the "Download" button to save your compressed images.</li>
+                </ol>
+            </div>
             <form>
                 <div class="control">
                     {{!-- <input type="file" id="upload"> --}}
                     <div class="file-input">
                         <input type="file" id="upload" class="file">
                         <label for="upload">
-                            Select file
+                            Select Image
                         </label>
                     </div>
                 </div>
@@ -33,54 +46,65 @@
                     <p class="file-name"></p>
                 </div>
                 <div class="control">
-                    <span style="margin-right: 50px">Width:</span><input id="width" type="number" value="100">
+                    <span style="margin-right: 65px;">MaxSizeMB:</span><input id="fileSize" type="number" value="1">
                 </div>
                 <div class="control">
-                    <span style="margin-right: 45px">Height:</span> <input id="height" type="number" value="100">
+                    <span style="margin-right: 15px;">MaxWidthOrHeight:</span> <input type="number"
+                        id="maxWidthOrHeight" value="1024">
                 </div>
                 <div class="control" id="controlBtns">
-                    <button>Resize</button>
+                    <button>Compress Now</button>
                 </div>
-            </form>
 
+            </form>
         </div>
         <script async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2078364019879861"
             crossorigin="anonymous"></script>
-        <!-- resize_1 -->
+        <!-- compressor_1 -->
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2078364019879861"
-            data-ad-slot="6048845552" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            data-ad-slot="5512808870" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         <div class="image-container">
+            <div class="input-output-container input-preview">
+                <span class="size" id="input-size"></span>
+                <img id="input-image" />
+            </div>
             <div class="input-output-container output-preview">
+                <span class="size" id="output-size"></span>
                 <img id="output-image" />
             </div>
         </div>
         <div class="image-compression-details">
+            <h3>Simple Image Resizer is free online picture compressor and resizer</h3>
+            <aside>Image compression is a type of data compression in which the original image is encoded with a small
+                number of bits.
+                The goal of picture compression is to eliminate image redundancy and store or transfer data in a more
+                efficient manner.</aside>
+            <p>Picture compression is the process of removing or grouping together particular sections of an image file
+                in order to minimize its size. Why do that? Here are a few reasons.</p>
+            <ul>
+                <li style="margin-bottom: 10px;">For the purpose of website optimization. Uncompressed pictures can lead
+                    your visitors to bounce if they take too long to load.</li>
+                <li style="margin-bottom: 10px;">For reducing the storage impact on your hard drive.
+                </li>
+                <li style="margin-bottom: 10px;">For the purpose of sending and uploading photos. Uploading an
+                    uncompressed image can take a long time, and some email services have a file size limit.</li>
+            </ul>
             <script async
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2078364019879861"
                 crossorigin="anonymous"></script>
             <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
-                data-ad-format="fluid" data-ad-client="ca-pub-2078364019879861" data-ad-slot="4718601950"></ins>
+                data-ad-format="fluid" data-ad-client="ca-pub-2078364019879861" data-ad-slot="4888517565"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-            <h3 class="detail-title">What is image resizing?</h3>
-            <aside>
-                Resizing is the process of changing the size of an image without cutting anything out. When you resize
-                an image, you're just changing the file size. Because size does matter on occasion.
-            </aside>
-            <aside>
-                Resizing your photo might make it fit into a specific area on a screen, such as a blog or social network
-                post. Smaller photographs weigh less than larger ones, which might help speed up the uploading process
-                or free up storage space on your devices.
-            </aside>
         </div>
     </div>
     {{>footer}}
-    <script src="/js/app.js"></script>
+    <script src="/js/compressor.js"></script>
 </body>
 
 </html>
