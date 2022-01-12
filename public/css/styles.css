@@ -81,10 +81,8 @@ button {
     align-items: center;
 }
 .output-image {
-  min-width: 35vh;
-  min-height: 30vh;
-  max-width: 50vh;
-  max-height: 50vh;
+  max-width: 40vh;
+  max-height: 40vh;
 }
 form {
     display: flex;
