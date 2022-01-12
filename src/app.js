@@ -36,11 +36,6 @@ app.get('/rotate', (req, res) => {
         title: 'image-rotate'
     })
 })
-app.get('/free-editor', (req, res) => {
-    res.render('freeEditor', {
-        title: 'editor'
-    })
-})
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'about'
